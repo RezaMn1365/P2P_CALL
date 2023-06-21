@@ -1,0 +1,93 @@
+{
+  "device": [
+    {
+      "data": {
+        "device_id": "lhWbDbNuA7LpXDrSAvN1Lck6wyyKMiKDU6jpv8eM",
+        "serial": "100000001",
+        "local_id": "klIMx5yhg1JH4lVv",
+        "secret": "C1SbMyliOFCZxJCxhN2w9PKDPC6kFksy"
+      }
+    },
+
+    {
+      "data": {
+        "device_id": "o2h7oAf7pOsFzR8H7EodLCZxTaFIySAb33c58CcT",
+        "serial": "100000002",
+        "local_id": "oCYCAtqTxhLslG99",
+        "secret": "PGgQHftnD7dnmo6xbEOW3mmnclXvsgi1"
+      }
+    },
+
+    {
+      "data": {
+        "device_id": "E7L1m2LY9Qhj3FacEgvoy7NhySnAIeumCoDx1L5a",
+        "serial": "100000003",
+        "local_id": "gBh3D1ihxlU7Tnku",
+        "secret": "uuxc9DYl7Q2IBhpjW08nbGU09jwHtGic"
+      }
+    },
+
+    {
+      "data": {
+        "device_id": "o0zqpvtPG9Z8j7iPjDD28M8YPYDVo83ee6JFwXIz",
+        "serial": "100000004",
+        "local_id": "HCYRzwtRpyaIQBGp",
+        "secret": "b3sa8dlrqRxVk8ALAyFlmjUU0czSbFhS"
+      }
+    },
+
+    {
+      "data": {
+        "device_id": "4ejsCSXSoBR6nH7d8lIncJHvOT3B0sDx9yG3wWNb",
+        "serial": "100000005",
+        "local_id": "l8JN1djZ1LtYPSkQ",
+        "secret": "0XyZ02pltrFnSoJ4efcX5fCjchniHuet"
+      }
+    },
+
+    {
+      "data": {
+        "device_id": "xsGbLI8OebhVvU54SIFFucOVWCr5TH8plYIbxTtr",
+        "serial": "100000006",
+        "local_id": "k4g5LAYKNqmH4ki6",
+        "secret": "Rqn5Pkf3a1K9N7lZZoMDUP50jIg6T0Oo"
+      }
+    },
+
+    {
+      "data": {
+        "device_id": "N4AadQnpYml0wet82R3YJuLn1Le1yTZj9ZGy0UTl",
+        "serial": "100000007",
+        "local_id": "T0wcD3kXb3Z9Ow4G",
+        "secret": "T4htsM6G2EwSCYBuDWizhnWBA0RpbHcc"
+      }
+    },
+
+    {
+      "data": {
+        "device_id": "VLeNaBLOxKRlXeO8QLz6tEq32uAKiHoAAnl9Oxzp",
+        "serial": "100000008",
+        "local_id": "FNErEkuquviKnoIw",
+        "secret": "tcBq1EZ3ncvcuOmnexOjZnXCd5aVxFQq"
+      }
+    },
+
+    {
+      "data": {
+        "device_id": "M1XJHpDb6PpaoDwLTLCgu096xfI5r6Oy7lXgZgRD",
+        "serial": "100000009",
+        "local_id": "SKCA2SltGYtZWKJh",
+        "secret": "SQvhAKCVYicncPcnEZSZjLRYRPMXd6D8"
+      }
+    },
+
+    {
+      "data": {
+        "device_id": "ZYewgQqVkv9aCFB9RpkUgxjSawuUKUu7tovgvbln",
+        "serial": "100000010",
+        "local_id": "sJD80mcDS2P8HUDs",
+        "secret": "l301sXYi6ioFEdkv2gQyOErTlC3kaCyD"
+      }
+    }
+  ]
+}

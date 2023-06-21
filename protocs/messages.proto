@@ -1,0 +1,138 @@
+syntax = "proto3";
+
+package device;
+
+//========================== commands
+
+message CommandMessage {
+    oneof command {
+        
+        // StopVideoRecordingCommand stopVideoRecordingCommand = 2;
+        GetLocation getLocation = 1;
+        GetAcceleration getAcceleration = 2;
+        GetCompass getCompass = 3;
+        GetBattery getBattery = 4;
+        GetGyroscope getGyroscope  = 5;
+        GetDirectoryInfo getDirectoryInfo = 6;
+        VideoRecord videoRecord = 7;
+        AudioRecord audioRecord = 8;
+        TakePhoto takePhoto = 9;       
+    } 
+}
+
+message GetLocation{   
+    //no params
+}
+message GetDirectoryInfo{
+string path = 1;
+}
+
+message GetAcceleration{   
+    //no params
+}
+
+message GetCompass{   
+    //no params
+}
+
+message GetBattery{   
+    //no params
+}
+
+message GetGyroscope{   
+    //no params
+}
+
+message VideoRecord{
+    int32 start = 1;
+    int32 duration = 2;        //in seconds
+}
+
+
+message AudioRecord{
+    int32 start = 1;
+    int32 duration = 2;        //in seconds
+}
+
+message TakePhoto{
+    string resulation = 1;
+}
+
+//========================== Reports
+
+message ReportMessage {
+    oneof report {        
+        Location location = 1;
+        Acceleration acceleration = 2;
+        Compass compass = 3;
+        Battery battery = 4;
+        Gyroscope gyroscope = 5;
+        DirectoryInfo directoryInfo = 6;
+        Audio audio= 7;
+        Photo photo = 8;
+        Video video = 9;
+    }
+}
+
+message Sample {
+    int32 timestamp = 1;
+    ReportMessage report = 2;
+}
+
+message Photo {    
+    repeated bytes content = 1;
+}
+
+message Audio {    
+    repeated bytes content = 1;
+}
+
+message Video {    
+    repeated bytes content = 1;
+}
+
+message Location {
+    double lat = 1;
+    double lng = 2;
+}
+
+message Acceleration {
+    double totalAcceleration = 1;
+    double xAcceleration = 2;
+    double yAcceleration = 3;
+    double zAcceleration = 4;
+}
+
+message Compass {
+    double direction = 1;
+    double xMagnetometer = 2;
+    double yMagnetometer = 3;
+    double zMagnetometer = 4;
+}
+
+message Gyroscope {
+    repeated double allAxis = 1;
+    double xGyroscpoe = 2;
+    double yGyroscpoe = 3;
+    double zGyroscpoe = 4;
+}
+
+message Battery {
+    int32 charge = 1;
+    string health = 2;
+    string status = 3;
+}
+
+message DirectoryInfo{
+    repeated FileInfo files = 1;
+}
+
+message FileInfo{
+    string name = 1;            //ok
+    string extention = 2;       //ok
+    string relativePath = 3;    //ok
+    int32 size = 4;             //ok in bytes
+    bool isDirectory = 5;       //ok
+    // string createdAt = 6;    //not avaliable in dart
+    string modifiedAt = 7;      //ok
+}

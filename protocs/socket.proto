@@ -1,0 +1,16 @@
+syntax = "proto3";
+package panel_tcp_socket;
+
+option go_package = "./";
+
+message VerificationRequest{
+    string ticket = 1;
+}
+
+message Empty{
+}
+
+service SocketService{
+    rpc Verify(VerificationRequest) returns (Empty);
+}
+

@@ -1,0 +1,198 @@
+syntax = "proto3";
+package user_gw;
+
+option go_package = "./";
+
+
+message Empty {}
+message DefaultResponse{
+    string message = 1;
+}
+
+message UserSigninRequest{
+    string username = 1;
+    string password = 2;
+    optional string ip = 3;
+    optional string agent = 4;
+    optional string details = 5;
+}
+
+message UserSinginResponse{
+    string access_token = 1;
+    string refresh_token = 2;
+    uint32 exp = 3;
+}
+message RenewTokenRequest{
+    string access_token = 1;
+    string refresh_token = 2;
+    optional string ip = 3;
+    optional string agent = 4;
+    optional string details = 5;
+}
+
+message RenewTokenResonse{
+    string access_token = 1;
+    string refresh_token = 2;
+}
+message LogoutRequest{
+    string access_token = 1;
+}
+
+
+service AuthenticationService{
+    rpc Authenticate(UserSigninRequest) returns (UserSinginResponse);
+    rpc RenewToken(RenewTokenRequest) returns (RenewTokenResonse);
+    rpc Logout(LogoutRequest) returns (DefaultResponse);
+}
+
+
+message Profile {
+    string user_id = 1;
+    string first_name = 2;
+    string last_name = 3;
+    string section_id = 4;
+}
+
+service ProfilesService {
+    rpc GetProfile(Empty) returns (Profile);
+}
+
+message GetSectionRequest{
+    string section_id = 1;
+}
+
+message Section {
+    string section_id = 1;
+    string title = 2;
+    string desc = 3;
+}
+
+service SectionsService {
+    rpc GetSection(GetSectionRequest) returns (Section);
+}
+
+message GetTicketReqest{
+    string user_id = 1;
+}
+
+message GetTicketResponse{
+    string ticket = 1;
+    string broker_ip = 2;
+    string broker_port = 3;
+}
+service ConnectorService {
+    rpc GetTicket(Empty) returns (GetTicketResponse);
+}
+message GetRoomRequest{
+    string room_id = 1;
+}
+message GetRoomResponse{
+    Room room = 1; 
+}
+
+message Room{
+    repeated Device devices = 1;
+}
+message Device{
+    string device_id = 1; 
+    repeated string trans_type = 2;
+    string serial = 3;
+    bool access = 4; 
+}
+service RoomManagementService {
+    rpc GetRoom(GetRoomRequest) returns (GetRoomResponse);
+}
+
+
+message GetTrackerRequest{
+    string device_id = 1;
+    string start_time = 2;
+    string end_time = 3;
+}
+
+message GetTrackerResponse{
+    repeated Location location = 1;
+}
+
+message Relation{
+    string user_id= 1;
+    string device_id = 2;
+    string device_serial = 3;
+}
+message Location{
+    double lat = 1;
+    double lng = 2;
+    string timestamp = 3; 
+}
+
+message GetUserRelationResponse{
+    repeated TrackerDevice devices = 1;
+}
+
+message TrackerDevice{
+    string device_id = 1;
+    string device_serial = 2;
+}
+service TrackerService{
+    rpc GetTracker(GetTrackerRequest) returns (GetTrackerResponse);
+    rpc GetUserRelation(Empty) returns (GetUserRelationResponse);
+}
+
+message Number {
+    string number = 1;
+    string owner_id = 2;
+}
+message Numbers {
+    repeated Number numbers = 1;
+    optional int32 total = 2;
+}
+message WhitelistRequest {
+    string phone = 2;
+    oneof rule {
+        string number = 3;
+        Range range = 4;
+        int32 level = 5;
+    }
+}
+
+message Range{
+    int32 from = 1;
+    int32 to = 2;
+}
+
+message AddWhiteListNumberRequest{
+    string own_number = 1;
+    string peer_number = 2;
+}
+message AddWhiteListRangeRequest{
+    string own_number = 1;
+    int32 from = 2;
+    int32 to = 3;
+}
+message AddWhiteListLevelRequest{
+    string own_number = 1;
+    int32 level = 2;
+}
+
+message Whitelist{
+    oneof rule {
+        string number = 3;
+        Range range = 4;
+        int32 level = 5;
+    }
+}
+
+message Whitelists {
+    repeated Whitelist whitelist = 1;
+}
+
+message GetWhitelist{
+    string phone = 2;
+}
+service InternalCallService{
+    rpc GetUserPhones(Empty) returns (Numbers);
+    rpc AddWhiteListNumber (AddWhiteListNumberRequest) returns (Empty);
+    rpc AddWhiteListRange (AddWhiteListRangeRequest) returns (Empty);
+    rpc AddWhiteListLevel (AddWhiteListLevelRequest) returns (Empty);
+    rpc GetWhitelists(GetWhitelist) returns (Whitelists);
+}

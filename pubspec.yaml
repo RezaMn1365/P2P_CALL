@@ -1,0 +1,100 @@
+name: screen_recorder_device
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=2.18.6 <3.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.2
+  get: 4.6.5
+  flutter: 
+    sdk: flutter
+  dio: ^4.0.6
+  dio_logging_interceptor: ^1.0.1
+  flutter_secure_storage: ^7.0.1
+  shared_preferences: ^2.0.17
+  hive_flutter: ^1.1.0
+  permission_handler: ^10.2.0
+
+  grpc: ^3.0.2
+  protoc_plugin: ^20.0.0
+
+  flutter_webrtc: ^0.9.27 
+  # 23
+  sdp_transform:
+  # websocket: ^0.0.5
+  web_socket_channel: ^2.3.0
+  flutter_foreground_task: ^4.1.0
+  flutter_svg: ^1.1.6
+  flutter_local_notifications: ^13.0.0
+
+  flutter_launcher_icons: ^0.12.0
+  change_app_package_name: ^1.1.0
+
+  basir_core_sdk: 
+    path: /Users/rez/Documents/basir_core_sdk/basir_core_sdk
+
+  # flutter_callkit_incoming: ^1.0.3+3
+  # uuid: 3.0.5
+
+  # flutter_dialpad: ^1.0.3
+  shimmer: ^2.0.0
+  flutter_dtmf: ^2.0.2
+  flutter_masked_text2: ^0.9.1
+
+  flutter_callkeep: ^0.3.1+1
+
+  # http: ^0.13.4
+  wakelock: ^0.6.2
+  proximity_screen_lock: ^1.1.0
+
+  awesome_notifications: ^0.7.4+1
+  flutter_slidable: ^2.0.0
+
+  syncfusion_flutter_sliders: ^20.2.50
+
+  stop_watch_timer: ^2.0.0
+  flutter_ringtone_player: ^3.2.0
+  flutter_background_service: ^2.4.6
+  device_info_plus: ^8.2.0
+  internet_connection_checker: ^1.0.0+1
+
+
+dev_dependencies: 
+  flutter_lints: ^2.0.0
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+
+  assets:
+    - assets/avatar.png
+    - assets/download.png
+    - assets/download.jpeg
+    - assets/green.png
+    - assets/red.png
+    - assets/images.jpeg    
+    - assets/back.png  
+    - assets/mic.png
+    - assets/mic_mute.png
+    - assets/sp.png
+    - assets/sp_mute.png
+    - assets/video.png
+    - assets/ble.png
+    - assets/cam.png
+    - assets/video_green.png
+    - assets/video_incom.jpg
+    - assets/video_outgo.jpg
+    - assets/voice_outgo.jpg
+    - assets/voice_incom.jpg
+    - assets/voice_calling.jpg
+    - assets/video_calling.jpg
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/logo.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+
